@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      #url {
+        font-size: 12;
+        color: "#FF0000";
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <!-- <script data-main="popup.js" src="./require.js"></script> -->
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>QRify</h1>
+    <div>Scan the QR code from your mobile to open the current link:</div>
+    <div id="container">
+      <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+      <div id="url"></div>
+    </div>
+  </body>
+</html>
